@@ -7,11 +7,89 @@ void main() {
 //  print(menuOpciones(2));
 //  print(menuB(7));
 //  print(menuOpciones(10));
+  listas();
+}
+
+void listas() {
+  List<int> pares = [8, 2, 4, 6, 8, 10, 12];
+  print(pares);
+  print(pares[0]);
+  print(pares.first);
+  print(pares[pares.length - 1]);
+  print(pares.last);
+  print(pares.length);
+
+  pares.add(14);
+  print(pares);
+  pares.addAll([16, 18, 20]);
+  print(pares);
+  pares.remove(10);
+  print(pares);
+  pares.removeAt(1);
+  print(pares);
+  pares.add(4);
+  print(pares);
+  pares.remove(4);
+  print(pares);
+  pares.addAll([6, 4, 8, 4]);
+  print(pares);
+
+  for (int i = 0; i < pares.length; i++) {
+    print("$i -> ${pares[i]}");
+    pares.remove(4);
+  }
+  /*
+  for (var elem in pares) {
+    print(elem);
+  }
+  pares.forEach(print);
+*/
+  print(pares);
+
+  pares[0] = 1001;
+  print(pares);
+
+  pares.removeRange(6, 8);
+  print(pares);
+
+  List<String> vocales = [];
+  if (vocales.isEmpty) {
+    print("Lista Vacia");
+  }
+
+  List<dynamic> varios = [
+    1,
+    "Letras",
+    2.3,
+    [2, 4, 6],
+    true
+  ];
+  print(varios);
+
+  List<dynamic> est1 = [
+    1001,
+    "Alex Vacca",
+    13,
+    ["P Movil", "BD", "Software 1"]
+  ];
+
+  List<dynamic> listadoEstudiantes = [];
+
+  listadoEstudiantes.addAll([est1, est1, est1, est1, est1]);
+
+  print(listadoEstudiantes);
+  for (int j = 0; j < listadoEstudiantes.length; j++) {
+    print(
+        "${j + 1} -> ${listadoEstudiantes[j][0]} - ${listadoEstudiantes[j][1]} ");
+    for (int i = 0; i < listadoEstudiantes[j][3].length; i++) {
+      print("******** ${i + 1} >> ${listadoEstudiantes[j][3][i]}");
+    }
+  }
 }
 
 String controlAcceso(int edad, bool vacunado) {
   String mensaje = "No Cumple con los Requisitos";
-  
+
   return mensaje;
 }
 
