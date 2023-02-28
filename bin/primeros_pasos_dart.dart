@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 void main() {
   // variables();
   // variablesnodefinidas();
@@ -7,7 +9,40 @@ void main() {
 //  print(menuOpciones(2));
 //  print(menuB(7));
 //  print(menuOpciones(10));
-  listas();
+//  listas();
+  tipoMap();
+}
+
+void tipoMap() {
+  Map<int, String> datos = {1: "A", 2: "E", 3: "I"};
+  Map<dynamic, dynamic> varios = {1: "A", "A": 1, true: []};
+
+  Map<String, dynamic> est1 = {
+    "codigo": 1001,
+    "Nombre": "Alex Vacca",
+    "Materias": ["P Movil", "BD", "Arq"],
+    "creditos": 18
+  };
+
+  print(est1);
+  print(est1["codigo"]);
+  print(est1["Materias"]);
+  est1["codigo"] = 1002;
+  print(est1);
+  est1["Estado"] = true;
+  print(est1);
+
+  List<Map<String, dynamic>> listadoEstudiantes = [];
+  listadoEstudiantes.addAll([est1, est1, est1, est1, est1]);
+  print(listadoEstudiantes);
+
+  for (int i = 0; i < listadoEstudiantes.length; i++) {
+    print("${i + 1} -> ${listadoEstudiantes[i]["codigo"]}");
+    for (int j = 0; j < listadoEstudiantes[i]["Materias"].length; j++) {
+      print(
+          "****************${j + 1}>>> ${listadoEstudiantes[i]["Materias"][j]}");
+    }
+  }
 }
 
 void listas() {
